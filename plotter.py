@@ -6,7 +6,7 @@ import pprint
 import math
 import readchar
 import tqdm
-import pigpio
+# import pigpio
 import numpy
 
 
@@ -126,14 +126,14 @@ class Plotter:
 
         else:
             try:
-                pigpio.exceptions = False
+                # pigpio.exceptions = False
                 # instantiate this Raspberry Pi as a pigpio.pi() instance
-                self.rpi = pigpio.pi()
+                # self.rpi = pigpio.pi()
                 # the pulse frequency should be no higher than 100Hz - higher values could
                 # (supposedly) # damage the servos
                 self.rpi.set_PWM_frequency(14, 50)
                 self.rpi.set_PWM_frequency(15, 50)
-                pigpio.exceptions = True
+                # pigpio.exceptions = True
                 self.virtual = False
                 # by default we use a wait factor of 0.01 seconds for better control
                 self.wait = wait if wait is not None else 0.01
@@ -908,7 +908,7 @@ class Pen:
 
         else:
 
-            self.rpi = pigpio.pi()
+            # self.rpi = pigpio.pi()
             self.rpi.set_PWM_frequency(self.pin, 50)
 
         self.up()
